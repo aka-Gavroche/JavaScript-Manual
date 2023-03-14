@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS\style_zero.css">
+    <!-- <link rel="stylesheet" href="CSS\style.css"> -->
+    <link rel="stylesheet" href="../../CSS/style.css">
+    <!------------------------------------Fonts------------------------------------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>JS lesson #4</title>
+</head>
+<body>
+    <header>
+        <h1>
+            <a class = "main_page_link" href="../../index.html">JavaScript</a>
+            <hr>
+        </h1>
+        <a class="previous_link" href="../JS-Files-3/index.html"></a>
+        <h2 class="suptitle_text">Урок №4<span class="lesson_name">Про типи даних</span></h2>
+        <a class="next_link" href="../JS-Files-5/index.html"></a>
+    </header>
+
+    <div class="suptitle">
+        <a class="previous_link" href="../JS-Files-3/index.html"></a>
+        <h2 class="suptitle_text suptitle_text--second">Урок №4</h2>
+        <a class="next_link" href="../JS-Files-5/index.html"></a>
+    </div>
+
+    <div class="suptitle_list">
+        <div class="suptitle_list_block">
+            <div class="suptitle_list_block_header">
+                <div class="close_button">X</div>
+            </div>
+            <div class="suptitle_list_content">
+                <p id="suptitleItem1">Типи даних</p>
+                <p id="suptitleItem2">Тип даних undefined</p>
+                <p id="suptitleItem3">Тип даних null</p>
+                <p id="suptitleItem4">Тип даних boolean</p>
+                <p id="suptitleItem5">Тип даних number</p>
+                <p id="suptitleItem6">Тип даних bigInt</p>
+                <p id="suptitleItem7">Тип даних string</p>
+                <p id="suptitleItem8">Тип даних object</p>
+                <p id="suptitleItem9">Тип даних symbol</p>
+                <p id="suptitleItem10">Тип даних function</p>
+                <p id="suptitleItem11">Перетворення типів</p>
+            </div>
+        </div>
+    </div>
+
+    <div id = "top_button" class="top_button">
+    </div>
+
+    <div class="block block1">
+        <h3 class="block-title">Типи даних</h3>
+        <div class="block-content" >
+            <p>Значення змінних завжди відносяться до певного типу даних.</p>
+            <p>
+                Оскільки JS є динамічно типізованою мовою, тип даних змінної змінюється динамічно в момент присвоєння 
+                або зміни значення, але аж ніяк не в момент оголошення.
+            </p>
+            <p>Отже, типи даних в JS є, але змінні не прив'язані до них.</p>
+            <p> Використовуючи оператор typeof, можна отримати поточний тип даних змінної.</p>
+            <p>
+                У JS існує 8 окремих типів даних:
+                <ul>
+                    <li>undefined;</li>
+                    <li>null;</li>
+                    <li>boolean;</li>
+                    <li>number;</li>
+                    <li>bigInt;</li>
+                    <li>string;</li>
+                    <li>symbol;</li>
+                    <li>object.</li>
+                </ul>
+            </p>
+            <p class="remark">
+                Також можна виділити в якості дев'ятого типу даних тип function - по суті є типом даних object,
+                але виведений в окремий тип для простішого визначення типу для функції.
+            </p>
+
+        </div>
+    </div>
+
+    <div class="block block2">
+        <h3 class="block-title">Тип даних undefined</h3>
+        <div class="block-content" >
+            <p>Undefined - це невизначений тип.</p>
+            <p>
+                Змінна поверне цей тип даних, якщо була оголошена, але їй не було присвоєно значення.
+            </p>
+            <p>
+                Відповідно, тип цей тип даних містить одне єдине значення - undefined.
+            </p>
+            <p>
+                Даний тип даних використовується для перевірки, чи була змінна визначена, чи ні.
+            </p>
+           
+        </div>
+    </div>
+
+    <div class="block block3">
+        <h3 class="block-title">Тип даних null</h3>
+        <div class="block-content" >
+            <p>Даний тип даних, як і undefined містить лише одне значення - null.</p>
+            <p>
+                У JS null не є посиланням на неіснуючий об'єкт, чи нульовим посиланням, 
+                як в деяких інших мовах програмування - null є спеціальним значенням, що позначає "нічого", "пусто".
+            </p>
+            <p>
+                Не варто плутати null та undefined: змінна із типом даних null - визначена, просто пуста, 
+                в той час як змінна із типом undefined - невизначена.
+            </p>
+            <p class="remark">
+                Якщо спробувати отримати тип даних змінної зі значенням null, ми отримаємо тип даних object - це офіційно признана
+                помилка оператора typeof, яка тягнеться ще з часів створення JS і залишена для сумісності.
+                Null не є об'єктом - це спеціальне значення із окремим типом.
+            </p>
+        </div>
+    </div>
+
+    <div class="block block4">
+        <h3 class="block-title">Тип даних boolean</h3>
+        <div class="block-content" >
+           <p>Булевий, або логічний тип даних.</p>
+           <p>Може приймати лише два значення: true або false. Булеві значення також можуть бути результатами порівнянь.</p>
+        </div>
+    </div>
+
+    <div class="block block5">
+        <h3 class="block-title">Тип даних number</h3>
+        <div class="block-content" >
+           <p>Представляє значення у вигляді цілих чисел та у вигляді чисел із плавачою крапкою.</p>
+           <p>
+            Окрім звичайних числових значень існують так звані спеціальні числові значення,
+            які також відносять до типу даних number:
+            <ul>
+                <li>
+                    <b>Infinity</b> - представляє собою математичну нескінченність; відповідно, це значення більше будь-якого числа;
+                    це значення можна задати явно, або отримати в результаті ділення на 0;
+                </li>
+                <li>
+                    <b>-Infinity</b> - те саме, лише зі знаком мінус і відповідно менше будь-якого числа;
+                </li>
+                <li>
+                    <b>NaN</b> - представляє обчислювальну помилку; результат неправильної чи невизначеної математичної операції;
+                    будь-яка математична операція із NaN повертає NaN, відповідно, якщо десь у математичному виразі є NaN, то воно
+                    поширюється на весь результат, але виключення становить оператор піднесення до степеня: NaN**0=1.
+                </li>
+            </ul>
+           </p>
+        </div>
+    </div>
+
+    <div class="block block6">
+        <h3 class="block-title">Тип даних bigInt</h3>
+        <div class="block-content" >
+            <p>Дає можливість працювати з цілими числами довільної довжини.</p>
+            <p>
+                Щоб створити значення типу bigInt необхідно додати n в кінець числового літералу.
+            </p>
+            <p>
+                В даний момент bigItn підтримується лише у браузерах Firefox, Chrome, Edge, Safari, але 
+                не підтримується у IE.
+            </p>
+            <p class="remark">
+                У JS тип number не може безпечно працювати із числами більшими ніж (25^3 - 1) або меншими
+                ніж -(25^3 - 1). За межами даного безпечного діапазону більшість чисел не можуть бути коректно представленими
+                через обмеження, що пов'язані із внутрішнім представленням чисел у двійковій формі. Наприклад, непарні числа
+                за межами безпечного діапазону будуть закруглятися до парних чисел. В той же час, деякі парні числа технічно
+                зберігати можна, але робити цього не рекомендується.
+            </p>
+        </div>
+    </div>
+
+    <div class="block block7">
+        <h3 class="block-title">Тип даних string</h3>
+        <div class="block-content" >
+           <p>Визначає рядок тексту.</p>
+           <p>У JS рядок повинен братися в лапки.</p>
+           <p>
+            У JS є три типи лапок:
+            <ul>
+                <li>одинарні;</li>
+                <li>подвійні;</li>
+                <li>зворотні.</li>
+            </ul>
+           </p>
+           <p>Одинарні та подвійні лапки є простими і між ними немає різниці.</p>
+           <p>Зворотні лапки дозволяють вбудовувати вирази, змінні, значення у рядок, використовуючи ${...}.</p>
+           <p class="remark">
+            Варто зазначити, що у JS не існує окремого типу даних для одного символа - є лише тип string.
+            Рядок може мати ноль символів (тобто бути пустим), один символ або безліч.
+           </p>
+        </div>
+    </div>
+
+    <div class="block block8">
+        <h3 class="block-title">Тип даних object</h3>
+        <div class="block-content" >
+           <p>
+            Відрізняється від усіх інших примітивних типів - їхніми значеннями можуть бути лише прості значення, а в об'єктах, 
+            в свою чергу, можна зберігати колекції даних, або більш складні структури.
+           </p>
+           <p>
+            Об'єкт може бути створений за допомогою фігурних дужок і може містити в собі набір необов'язкових властивостей,
+            що розділяються між собою комами.
+           </p>
+           <p>
+            Властивість - це пара: "ключ: значення".
+           </p>
+        </div>
+    </div>
+
+    <div class="block block9">
+        <h3 class="block-title">Тип даних symbol</h3>
+        <div class="block-content" >
+           <p>
+            Виконує роль унікального ідентифікатора об'єкта. Також є примітивним типом даних.
+           </p>
+           <p>Нові символи створюються за допомогою однойменної функції.</p>
+        </div>
+    </div>
+
+    <div class="block block10">
+        <h3 class="block-title">Тип даних function</h3>
+        <div class="block-content" >
+           <p>
+            Як вже говорилося, цей тип даних є по суті типом object, який для зручності вивели
+            в окремий тип для простого визначення функції.
+           </p>
+        </div>
+    </div>
+
+    <div class="block block11">
+        <h3 class="block-title">Перетворення типів</h3>
+        <div class="block-content" >
+           <p>
+            У JS можна перетворювати один тип в інший за допомогою операторів, або спеціальних функцій.
+           </p>
+           <p>
+            Використовуючи функцію <b>String</b> можна перетворити змінну одного типу даних у рядкову. 
+           </p>
+           <p>
+            Також можна перетворити рядок в число, використовуючи функцію <b>Number</b>.
+            Якщо перетворювати в число рядок, у якому немає жодного числа, отримаємо NaN.
+           </p>
+           <p>
+            У JS можливе автоматичне перетворення без використання функцій. Наприклад, при діленні рядка "42" на рядок "2"
+            отримаємо число 21.
+           </p>
+           <p>
+            Використовуючи функцію <b>Boolean</b>, можна здійснити перетворення змінної в булевий тип даних.
+            При перетворенні будь-якого числа, окрім 0, чи рядка, окрім пустого, в булевий тип, отримаємо значення true, 
+            а при перетворенні числа 0 чи пустого рядка отримаємо false.
+           </p>
+        </div>
+    </div>
+    <script src="../../JS/script.js"></script>
+    <script src="JS\script.js"></script>
+</body>
+</html>

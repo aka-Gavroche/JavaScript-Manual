@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS\style_zero.css">
+    <!-- <link rel="stylesheet" href="CSS\style.css"> -->
+    <link rel="stylesheet" href="../../CSS/style.css">
+    <!------------------------------------Fonts------------------------------------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!------------------------------------Highlights.js------------------------------------>
+    <link rel="stylesheet" href="../../CSS/vs2015.min.css">
+    <title>JS lesson #7. Цикли.</title>
+</head>
+<body>
+    <header>
+        <h1>
+            <a class = "main_page_link" href="../../index.html">JavaScript</a>
+            <hr>
+        </h1>
+        
+        <a class="previous_link" href="../JS-Files-6/index.html"></a>
+        <h2  class="suptitle_text">Урок №7<span class="lesson_name">Про цикли</span></h2>
+        <a class="next_link" href="../JS-Files-8/index.html"></a>
+    </header>
+
+    <div class="suptitle">
+        <a class="previous_link" href="../JS-Files-6/index.html"></a>
+        <h2 class="suptitle_text suptitle_text--second">Урок №7</h2>
+        <a class="next_link" href="../JS-Files-8/index.html"></a>
+    </div>
+
+    <div class="suptitle_list">
+        <div class="suptitle_list_block">
+            <div class="suptitle_list_block_header">
+                <div class="close_button">X</div>
+            </div>
+            <div class="suptitle_list_content">
+                <p id="suptitleItem1">Цикл while</p>
+                <p id="suptitleItem2">Цикл do...while</p>
+                <p id="suptitleItem3">Цикл for</p>
+                <p id="suptitleItem4">Директива break</p>
+                <p id="suptitleItem5">Директива continue</p>
+                <p id="suptitleItem6">Мітки для break/continue</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id = "top_button" class="top_button">
+    </div>
+
+<!------------------------------BLOCK1------------------------------>
+    <div class="block block1">
+        <h3 class="block-title">Цикл while</h3>
+        <div class="block-content" >
+            <p>
+                Цикл while має наступний синтаксис:
+            </p>
+            <pre>
+                <code class="language-javascript">
+while (condition) {
+    // код, який  також називаються "тілом циклу"
+}
+                </code>
+            </pre>
+            <p>
+                Код із тіла циклу виконується доти, доки умова істинна. Одне виконання тіла циклу називається ітерацією.
+            </p>
+            <pre>
+                <code class="language-javascript">
+let i = 0;
+while (i < 3) { // виводить 0, потім 1, потім 2
+    alert (i); 
+    i++;
+}                
+                </code>
+            </pre>
+            <p>
+                У прикладі вище, код буде виконуватись доти, доки змінна менша вказаного значення. Якби рядок "i++" був би відсутнім,
+                то теоретично, цикл повторювався б вічно. На практиці ж браузер дасть користувачу можливість зупинити скрипт, що "завис".
+            </p>
+            <p>
+                Умовою циклу може бути будь-який вираз або змінна. Умова циклу обчислюється і перетворюється у логічне значення.
+            </p>
+            <p>
+                Можливі деякі коротші записи. Наприклад, замість умови while(i != 0), можна використовувати while(i).
+            </p>
+            <pre>
+                <code class="language-javascript">
+let i = 3;
+while (i) { //коли i буде дорівнювати 0, буде false і цикл зупиниться.
+    alert (i);
+    i--;
+}
+                </code>
+            </pre>
+            <p>
+                Також, якщо тіло циклу складається лише з однієї інструкції, ми можемо забрати фігурні дужки: 
+            </p>
+            <pre>
+                <code class="language-javascript">
+let i = 3;
+while (i) alert (i--);
+                </code>
+            </pre>
+        </div>
+    </div>
+
+<!------------------------------BLOCK2------------------------------>
+    <div class="block block2">
+        <h3 class="block-title">Цикл do...while</h3>
+        <div class="block-content" >
+            <p>
+                Використовуючи синтаксис do...while можна розмістити перевірку умови перед тілом циклу.
+            </p>
+            <pre>
+                <code class="language-javascript">
+do {
+   //тіло циклу
+ while (condition)
+                </code>
+            </pre>
+            <p>
+                Цикл спочатку виконає тіло, а вже потім перевірить умову, і, поки її значення дорівнюватиме true,
+                цикл буде виконуватись знову і знову.
+            </p>
+            <pre>
+                <code class="language-javascript">
+let i = 0;
+do {
+    alert (i);
+    i++;
+} while (i < 3);
+                </code>
+            </pre>
+            <p>
+                Така форма синтаксису виправдана, якщо потрібно, щоб тіло циклу виконалось хоча б один раз,
+                навіть якщо умова виявиться неістинною. На практиці частіше виконується форма з передумовою while(...) {}.
+            </p>
+        </div>
+    </div>
+
+<!------------------------------BLOCK3------------------------------>
+    <div class="block block3">
+        <h3 class="block-title">Цикл for</h3>
+        <div class="block-content" >
+            <p>
+                Цикл for складніший, але при цьому найбільш поширений.
+            </p>
+            <pre>
+                <code class="language-javascript">
+for (let i = 0; i < 3; i++) { //виведе 0, потім 1, потім 2
+    alert (i);
+}
+                </code>
+            </pre>
+            <p>
+                Перший вираз у круглих дужках - це початок циклу, другий вираз - умова, а третій - крок.
+                Умова перевіряється перед кожною ітерацією циклу, і, якщо результатом обчислення буде false, 
+                цикл зупиниться.
+            </p>
+            <p>
+                У розглядуваному прикладі змінна лічильника "i" була оголошена прямо в циклі.
+                Це так зване "вбудоване" оголошення змінної. Такі змінні існують лише всередині циклу.
+            </p>
+            <p>
+                Також, замість оголошеної змінної можна використовувати вже існуючу і вона 
+                буде доступна після циклу, так як була оголошена зовні циклу.
+            </p>
+            <pre>
+                <code class="language-javascript">
+let i = 0;
+
+for (i = 0; i < 3; i++) {
+    alert (i); // 0, 1, 2
+}
+
+alert (i); // 3
+                </code>
+            </pre>
+            <p>
+                Будь-яку частину в круглих дужках циклу for можна пропускати: початок, умову, крок.
+                При цьому, крапки з комами обов'язково повинні бути, інакше буде синтаксична помилка. 
+                Також, якщо забрати всі частини, ми отримаємо нескінченний цикл.
+            </p>
+            <pre>
+                <code class="language-javascript">
+for (; ;) {
+    //цикл буде виконуватись вічно
+}                
+                </code>
+        </div>
+        </pre>
+        <p></p>
+    </div>
+
+<!------------------------------BLOCK4------------------------------>
+    <div class="block block4">
+        <h3 class="block-title">Директива break</h3>
+        <div class="block-content" >
+            <p>
+                Використовуючи спеціальну директиву break, ми можемо вийти з циклу в будь-який момент.
+            </p>
+            <pre>
+                <code class="language-javascript">
+let sum = 0;
+while (true) {
+    let value = +prompt ("Введіть число:", "");
+    if (!value) break;
+    sum += value;
+}
+
+alert ("Сума: " + sum);
+                </code>
+            </pre>
+            <p>
+                У прикладі вище користувач щоразу вводить значення "і", якщо воно в умові даватиме false, то цикл припиняється
+                завдяки директиві break і виконання переходить за межі циклу, а в даному прикладі на рядок alert.
+            </p>
+            <p>
+                Для закріплення можна навести ще один приклад:
+            </p>
+            <pre>
+                <code class="language-javascript">
+let num = 0;
+
+for(; num < 5; num++) {
+    alert (num);
+    if (num == 2) break;
+}
+
+alert (`Робота завершена, num = ${num}`);
+                </code>
+            </pre>
+            <p>
+                Використання "нескінченного" циклу разом із break є дуже зручним для ситуацій, коли
+                умова, по якій треба перерватись, знаходиться не на початку чи кінці циклу, а посередині, 
+                чи в декількох місцях циклу.
+            </p>
+        </div>
+    </div>
+
+<!------------------------------BLOCK5------------------------------>
+    <div class="block block5">
+        <h3 class="block-title">Директива continue</h3>
+        <div class="block-content" >
+            <p>
+                Використання директиви continue, не перериваючи цикл, переходить до наступної його ітерації,
+                якщо умова все ще дорівнює true.
+            </p>
+            <pre>
+                <code class="language-javascript">
+for (let i = 0; i < 10; i++) {
+    if (i % 2 == 0) continue;
+    alert (i); // спочатку 1, потім 3, 5, 7, 9
+}
+                </code>
+            </pre>
+            <p>
+                Цю директиву використовують, коли потрібно пропустити певну ітерацію циклу. Наприклад, у прикладі вище
+                директива continue використовується, щоб виводити лише непарні числа. Для парних чисел
+                директива continue припиняє виконання тіла циклу і передає керування на наступну ітерацію for (із наступним числом).
+                Відповідно, таким чином, виводяться лише непарні значення.
+            </p>
+            <p>
+                Директива continue дозволяє уникати вкладеності. Наприклад, цикл, який виводить лише непарні значення,
+                міг би виглядати так:
+            </p>
+            <pre>
+                <code class="language-javascript">
+for (let i = 0; i < 10; i++) {
+    if (i % 2) {
+        alert (i);
+    }
+}                    
+                </code>
+            </pre>
+            <p>
+                Технічно, такий цикл ідентичний до попереднього циклу із директивою continue, але
+                в даному прикладі ми отримали додатковий рівень вкладеності фігурних дужок і 
+                у випадку, якби код всередині if був би довший, це б погіршувало б читання,
+                на відміну від варіанту з директивою continue.
+            </p>
+            <p>
+                Директиви break/continue не можна використовувати в умовному (тернарному) операторі ? 
+                в якості виразів, оскільки це викличе помилку. Це ще одна з причин не використовувати
+                умовний (тернарний) оператор ? замість if.
+            </p>
+        </div>
+    </div>
+
+<!------------------------------BLOCK6------------------------------>
+    <div class="block block6">
+        <h3 class="block-title">Мітки для break/continue</h3>
+        <div class="block-content">
+            <p>
+                Бувають випадки, коли потрібно вийти з декількох рівнів циклу за раз. Але, скажімо, у випадку,
+                коли ми перебуваючи в циклі, що вкладений в інший цикл, використаємо break, ми перервемо 
+                лише внутрішній цикл і перейдемо у зовнішній. Для того, аби вийти за межі обидвох циклів
+                можна використати мітки.
+            </p>
+            <p>
+                Мітка має вигляда ідентифікатора з двокрапкою перед циклом.
+            </p>
+            <pre>
+                <code>
+outer : for (let i = 0; i < 3; i++) {
+    for (j = 0; j < 3; j++) {
+        let input = prompt (`Значення на координатах ${i}, ${j}:`, "");
+        // якщо пусти рядок чи відміна, то вийти з обох циклів
+        if (!input) break outer;
+        // код циклу
+    }
+}
+alert ("Готово!");
+                </code>
+            </pre>
+            <p>
+                В даному вище прикладі ми бачимо, що викликом break outer ми переходимо до найближчого зовнішнього циклу
+                із міткою outer:, розриваємо його і після цього керування переходить за межі циклу.
+            </p>
+            <p>
+                Мітку можна розміщувати на окремому рядку.
+            </p>
+            <pre>
+                <code class="language-javascript">
+labelName: for (let i = 0; i < 3; i++) {
+    // код циклу
+}
+                </code>
+            </pre>
+            <p>
+                Директиву continue також можна використовувати із міткою. 
+                В такому випадку керування перейде а наступну ітерацію циклу з міткою.
+            </p>
+            <p>
+                Мітки не дають можливості передавати керування в довільне місце коду. 
+                Директива break повинна завжди знаходитись всередині блоку кода і 
+                за допомогою міток можна передавати керування до найближчого зовнішнього блоку 
+                із вказаною міткою. Технічно, для цього підходить будь-який маркований блок.
+            </p>
+            <pre>
+                <code class="language-javascript">
+label : {
+    // код блоку
+    break label; // зпрацює
+    // код блоку
+}
+                </code>
+            </pre>
+            <p>
+                Хоча директиву break прийнято використовувати всередині циклів. В свою чергу директива continue
+                працює лише всередині циклів.
+            </p>
+        </div>
+    </div>
+
+    <script src="../../JS/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script src="../../JS/script.js"></script>
+    <script src="JS\script.js"></script>
+</body>
+</html>

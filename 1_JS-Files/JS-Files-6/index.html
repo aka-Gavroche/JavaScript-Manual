@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS\style_zero.css">
+    <!-- <link rel="stylesheet" href="CSS\style.css"> -->
+    <link rel="stylesheet" href="../../CSS/style.css">
+    <!------------------------------------Fonts------------------------------------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!------------------------------------Highlights.js------------------------------------>
+    <link rel="stylesheet" href="../../CSS/vs2015.min.css">
+    <title>JS lesson #6. Умовне розгалуження</title>
+</head>
+<body>
+    <header>
+        <h1>
+            <a class = "main_page_link" href="../../index.html">JavaScript</a>
+            <hr>
+        </h1>
+        
+        <a class="previous_link" href="../JS-Files-5/index.html"></a>
+        <h2  class="suptitle_text">Урок №6<span class="lesson_name">Умовне розгалуження</span></h2>
+        <a class="next_link" href="../JS-Files-7/index.html"></a>
+    </header>
+
+    <div class="suptitle">
+        <a class="previous_link" href="../JS-Files-5/index.html"></a>
+        <h2 class="suptitle_text suptitle_text--second">Урок №6</h2>
+        <a class="next_link" href="../JS-Files-7/index.html"></a>
+    </div>
+
+    <div class="suptitle_list">
+        <div class="suptitle_list_block">
+            <div class="suptitle_list_block_header">
+                <div class="close_button">X</div>
+            </div>
+            <div class="suptitle_list_content">
+                <p id="suptitleItem1">Інструкція if(...)</p>
+                <p id="suptitleItem2">Умовний (тернарний) оператор "?"</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id = "top_button" class="top_button">
+    </div>
+
+    <div class="block block1">
+        <h3 class="block-title">Інструкція if(...)</h3>
+        <div class="block-content" >
+            <p>
+                Дана інструкція виконує блок коду, якщо умова в круглих дужках дає результат true.
+            </p>
+            <pre>
+                <code class="language-javascript">
+let message = "Hello World!"
+
+if (2 > 1) {
+    console.log (message);
+}
+                </code>
+            </pre>
+            <p>
+                У якості операндів, всередині умови також можна використовувати змнінні. Також умова може бути
+                складною: містити різні логічні оператори.
+            </p>
+            <p>
+                Після обчислення виразу в круглих дужках інструкція if(...) перетворює результат в логічний тип.
+            </p>
+            <p>
+                Інструкція if(...) має скорочену форму запису для випадків, коли необхідно виконати якусь одну інструкцію.
+            </p>    
+            <pre>
+                <code class="language-javascript">
+if (2 > 1) console.log ("Hello World!");
+                </code>
+            </pre>
+            <p>
+                Інструкція if(...) може мати необов'язковий блок else (інакше) - він виконується, коли умова неістинна.
+            </p>
+            <pre>
+                <code class="language-javascript">
+if ( 2 < 1) {
+    alert ("Умова істинна.")
+} else {
+    alert ("Умова неістинна."); // спрацює цей блок
+}
+                </code>
+            </pre>
+            <p>
+                У випадках, коли потрібно перевірити декілька варіантів умов, використовується блок else if (...), але 
+                можна перевярти декілька умов без використання else.
+            </p>
+            <pre>
+                <code class="language-javascript">
+let year = prompt ("Коли була опублікована специфікація ECMAScript-2015?", "");
+
+if (year < 2015) {
+    alert ("Зарано.");
+} else if (year > 2015) {
+    alert ("Запізно.");
+} alert ("Вірно!");
+                </code>
+            </pre>
+            <p></p>
+        </div>
+    </div>
+
+    <div class="block block2">
+        <h3 class="block-title">Умовний (тернарний) оператор "?"</h3>
+        <div class="block-content" >
+            <p>
+                Часто бувають випадки, коли необхідно визначити змінну залежно від умови:
+            </p>
+            <pre>
+                <code class="language-javascript">
+let accessAllowed;
+
+let age = prompt ("Скільки Вам років?", "");
+
+if (age > 18) {
+    accessAllowed = true;
+} else {
+    accessAllowed = false;
+}
+
+alert (accessAllowed); // true/false, залежно від уведеного користувачем значення
+                </code>
+            </pre>
+            <p>
+                Використовуючи умовний (тернарний) оператор "?" можна виконати вищенаведену операцію значно коротшим чином:
+            </p>
+            <pre>
+                <code class="language-javascript">
+let age = prompt ("Скільки Вам років?", "");
+
+let accessAllowed = (age > 18) ? true : false;
+
+alert (accessAllowed); // true/false, залежно від уведеного користувачем значення
+                </code>
+            </pre>
+            <p>
+                Спочатку обчислюється умова: якщо вона істинна, то повертається перше значення, а у протилежному випадку 
+                повертається друге значення.
+            </p>
+            <p>
+                Також, у прикладі вище дужки можна забрати, оскільки умовний (тернарний) оператор "?" має низький приорітет.
+            </p>
+            <p>
+                Умовний оператор "?" називають ще тернарним, бо він приймає 3 операнди і є єдиним у своєму роді.
+            </p>
+            <p>
+                Цей оператор також можна використовувати для запису кількох умов у вигляді послідовності операторів "?".
+            </p>
+            <pre>
+                <code class="language-javascript">
+let age = prompt ("Вік?", "18");
+
+let message = (age < 3) ? "Привіт, малюк!" :
+    (age < 18) ? "Привіт!" :
+    (age < 100) ? "Доброго дня!" :
+    "Який незвичайний вік!"
+
+alert (message);
+                </code>
+            </pre>
+            <p>
+                Така реалізація може бути не зручною для читання, тому рекомендується використовувати 
+                класичну реалізацію через інструкцію if (...).
+            </p>
+            <p>
+                Існує нетрадиційний спосіб використання оператора "?", а саме його можна 
+                використовувати для заміни інструкції if (...).
+            </p>
+
+            <pre>
+                <code class="language-javascript">
+let company = prompt ("Яка компанія створила JS?", "");
+
+(company == "Netscape") ?
+    alert ("Вірно!") : alert ("Невірно!"); // Вірно! 
+                </code>
+            </pre>
+            <p>
+                В даному вище прикладі, залежно від результату обчислення умови, буде виконана перша частина (якщо true),
+                або друга частина (якщо false).
+            </p>
+            <p>
+                Проте не рекомендується використовувати оператори "?" таким чином, оскільки це погіршує читання коду.
+                Оператор "?" варто використовувати лише тоді, коли потрібно повернути одне чи друге значення залежно від умови.
+            </p>
+        </div>
+    </div>
+
+    <script src="../../JS/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script src="../../JS/script.js"></script>
+    <script src="JS\script.js"></script>
+</body>
+</html>

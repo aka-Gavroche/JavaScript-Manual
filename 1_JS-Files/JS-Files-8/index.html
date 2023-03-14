@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS\style_zero.css">
+    <!-- <link rel="stylesheet" href="CSS\style.css"> -->
+    <link rel="stylesheet" href="../../CSS/style.css">
+    <!------------------------------------Fonts------------------------------------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!------------------------------------Highlights.js------------------------------------>
+    <link rel="stylesheet" href="../../CSS/vs2015.min.css">
+    <title>JS lesson #8. Функції.</title>
+</head>
+<body>
+    <header>
+        <h1>
+            <a class = "main_page_link" href="../../index.html">JavaScript</a>
+            <hr>
+        </h1>
+        
+        <a class="previous_link" href="../JS-Files-7/index.html"></a>
+        <h2  class="suptitle_text">Урок №8<span class="lesson_name">Про функції</span></h2>
+        <a class="next_link" href="#"></a>
+    </header>
+
+    <div class="suptitle">
+        <a class="previous_link" href="../JS-Files-7/index.html"></a>
+        <h2 class="suptitle_text suptitle_text--second">Урок №8</h2>
+        <a class="next_link" href="#"></a>
+    </div>
+
+    <div class="suptitle_list">
+        <div class="suptitle_list_block">
+            <div class="suptitle_list_block_header">
+                <div class="close_button">X</div>
+            </div>
+            <div class="suptitle_list_content">
+                <p id="suptitleItem1">Визначення</p>
+                <p id="suptitleItem2">Оголошення функцій (Function declaration)</p>
+                <p id="suptitleItem3">Імена функцій</p>
+                <p id="suptitleItem4">Вкладеність і видимість функцій</p>
+                <p id="suptitleItem5">Локальні, зовнішні та глобальні змінні</p>
+                <p id="suptitleItem6"></p>
+            </div>
+        </div>
+    </div>
+    
+    <div id = "top_button" class="top_button">
+    </div>
+
+<!------------------------------BLOCK1------------------------------>
+    <div class="block block1">
+        <h3 class="block-title">Визначення</h3>
+        <div class="block-content" >
+            <p>
+                Функції призначені для виконання одного і того є коду у різних місцях.
+            </p>
+            <p>
+                У JS існують вбудовані функції, такі як alert(message), prompt(message, default), confirm(question), але
+                можна створювати свої власні функції.
+            </p>
+        </div>
+    </div>
+
+<!------------------------------BLOCK2------------------------------>
+    <div class="block block2">
+        <h3 class="block-title">Оголошення функцій (Function declaration)</h3>
+        <div class="block-content" >
+            <p>
+                Оголошення функцій використовується для створення функцій.
+            </p>
+            <pre>
+                <code class="language-javascript">
+function showMessage () {
+    alert ("Hello!");
+}
+                </code>
+            </pre>
+            <p>
+                Спочатку йде  ключове слово function, потім ім'я функції, після чого йде 
+                список параметрів і вже саме тіло функції.
+            </p>
+            <p>
+                Створена функція може бути викликаною по її імені. Викликати функцію можна як після її оголошення,
+                так і до цього, а також функцію можна викликати багато разів.
+            </p>
+            <pre>
+                <code class="language-javascript">
+function showMessage () {
+    alert ("Hello!");
+}
+
+showMessage (); // цей виклик виконає код функції
+                </code>
+            </pre>
+            <p>
+                Даний приклад яскраво демонструє одне з головних призначень функції:
+                уникнути дублювання коду. Тепер, якщо потрібно буде змінити повідомлення,
+                або спосіб його виводу, достатньо внести зміни лише в самій функції.
+            </p>
+        </div>
+    </div>
+
+<!------------------------------BLOCK3------------------------------>
+    <div class="block block3">
+        <h3 class="block-title">Імена функцій</h3>
+        <div class="block-content" >
+            <p>
+                Оскільки функція - це дія, то іменами функцій зазвичай є дієслова. Ім'я функції повинно бути коротким
+                і описувати, що робить функція.
+                В імені функції використовуються дієслівні префікси, що позначають дію, а після них йдуть вже самі об'єкти дій.
+            </p>
+            <p>
+                Наприклад деякі дієслівні префікси:
+            </p>
+            <ul>
+                <li><b>"show..."</b> - функція щось показує;</li>
+                <li><b>"get..."</b> - функція повертає якесь значення;</li>
+                <li><b>"calc..."</b> - функція щось обчислює;</li>
+                <li><b>"create..."</b> - функція щось створює;</li>
+                <li><b>"check..."</b> - функція щось перевіряє і повертає логічне значення.</li>
+            </ul>
+            <p>
+                Приклади імен функцій:
+            </p>
+            <pre>
+                <code class="language-javascript">
+showMessage (); // показує повідомлення
+getAge (); // повертає вік
+calcSum (); //обчислює суму і повертає результат
+createForm (); //створює форму і зазвичай повертає її
+checkPermission (); //щось перевіряє і повертає логічне значення
+                </code>
+            </pre>
+            <p>
+                Завдяки префіксам стає одразу зрозуміло, що саме робить функція.
+            </p>
+            <p>
+                Функція має виконувати лише те, що явно розуміється її назвою. Одна функція - одна дія.
+            </p>
+            <p>
+                Дві незалежні дії мають зазвичай дві функції - кожна дія має свою функцію, навіть якщо
+                передбачається, що вони будуть викликатися разом (у цьому випадку можна створити третю функцію, 
+                яка буде їх викликати).
+            </p>
+            <p>
+                Декілька прикладів, що порушують правило: 
+            </p>
+            <ul>
+                <li>
+                    <b>getAge</b> - буде поганим вибором, якщо функція буде виводити alert із віком, бо дана
+                функція має лише повертати його, а для виведення отриманого значення ліпше 
+                використати іншу функцію (наприклад showAge);
+                </li>
+                <li>
+                    <b>createForm</b> - буде поганим вибором, якщо функція буде змінювати документ, 
+                    додаючи форму у нього, бо дана функція повинна лише створювати форму і повертати її;
+                </li>
+                <li>
+                    <b>checkPermission</b> - буде поганим вибором, якщо функція буде відображати повідомлення
+                    з текстом "Доступ дозволено"/"Доступ заборонено", бо дана функція повинна виконувати
+                    лише перевірку і повертати результат, а для виведення тексту ліпше використати
+                    іншу функцію (наприклад showPermission).
+                </li>
+            </ul>
+            <p>
+                Імена функцій, що використовуються дуже часто, роблять інколи дуже короткими.
+                Наприклад фреймворк jQuery визначає функцію за допомогою символу "$". В бібліотеці Lodash основна
+                функція представлена іменем "_".
+            </p>
+        </div>
+    </div>
+
+<!------------------------------BLOCK4------------------------------>
+    <div class="block block4">
+        <h3 class="block-title">Вкладеність і видимість функцій</h3>
+        <div class="block-content" >
+            <p>
+                <b>Вкладена функція</b> - це функція, що створюється в середині іншої функції.
+            </p>
+            <pre>
+                <code class="language-javascript">
+function getSumm () { //батьківська функція для вкладених функцій
+    let numOne, numTwo;
+
+    function getNumOne () { //вкладена функція (дочірня)
+        numOne = 1;
+    }
+
+    function getNumTwo () { //вкладена функція (дочірня)
+        numTwo = 2;
+    }
+
+    getNumOne ();
+    getNumTwo ();
+
+    let numSumm = numOne + numTwo;
+
+    alert(numSumm);
+}
+
+getSumm ();
+                </code>
+            </pre>
+            <p>
+                Спроба викликати дочірню функцію за межами батьківської виклике помилку.
+            </p>
+            <p>
+                У режимі "use strict", якщо функція оголошена всередині якогось блоку, то при спробі 
+                викликати її за межами цього блоку виникне помилка.
+            </p>
+        </div>
+    </div>
+
+<!------------------------------BLOCK5------------------------------>
+    <div class="block block5">
+        <h3 class="block-title">Локальні, зовнішні та глобальні змінні</h3>
+        <div class="block-content" >
+            <p>
+                <b>Локальна змінна</b> - це змінна, що оголошена всередині функції 
+                і видима лише всередині цієї функції.
+            </p>
+            <pre>
+                <code class="language-javascript">
+function showMessage () {
+    let message =  "Hello!"; //локальна змінна
+    
+    alert (message);
+}
+
+showMessage ();
+alert (message); // буде помилка
+                </code>
+            </pre>
+            <p>
+                <b>Зовнішня змінна</b> - це змінна, що оголошена поза межами функції. 
+                Функція має повний доступ до зовнішніх змінних і може змінювати їхнє значення.
+            </p>
+            <pre>
+                <code class="language-javascript">
+let userName = "John"; //зовнішня змінна
+
+function showMessage () {
+    userName = "Jack"; // змінюємо значення зовнішньої змінної
+
+    let message = "Hello, " + userName;
+    alert (message);
+}
+
+alert (userName); // John - перед викликом функції
+showMessage (); // Hello Jack
+alert (userName); //Jack - функція змінила значення зовнішньої змінної
+                </code>
+            </pre>
+            <p>
+                Зовнішня змінна використовується, якщо у функції немає такої локальної.
+                Якщо ж у функціїї є однойменна локальна змінна, то вона перекриє зовнішню 
+                і зовнішня змінна буде проігнорована.
+            </p>
+            <pre>
+                <code class="language-javascript">
+let userName = "John"; //зовнішня змінна
+
+function showMessage () {
+    let userName = "Jack"; // оголошена однойменна локальна змінна
+
+    let message = "Hello, " + userName; 
+    alert (message);
+}
+// фукнція створить свою власну локальну змінну userName
+showMessage (); // Hello, Jack
+alert (userName); //John - зовнішня змінна не змінилась
+
+                </code>
+            </pre>
+            <p>
+                <b>Глобальні змінні</b> - це змінні, що оголошені зовні усіх функцій. Глобальні змінні 
+                видимі для будь-якої функції, якщо тільки їх не перекривають однойменні локальні змінні.
+                Бажано зводити використання глобальних змінних до мінімуму. В сучасному коді
+                зазвичай є мало або ж взагалі немає глобальних змінних. Хоч вони іноді корисні для
+                збереження найважливіших загальнопроектних даних.
+            </p>
+            <pre>
+                <code class="language-javascript">
+let globalVar = "Глобальна змінна";
+
+function getSum () {
+    let numOne, numTwo;
+
+    function getNumOne () {
+        numOne = 1;
+        alert (globalVar); //Глобальна змінна
+    }
+
+    function getNumTwo () {
+        numTwo = 2;
+    }
+
+    getNumOne ();
+    getNumTwo ();
+
+    let numSum = numOne + numTwo;
+
+    alert (numSum);
+    alert (globalVar); //Глобальна змінна
+}
+
+alert (globalVar); //Глобальна змінна
+getSum ();
+                </code>
+            </pre>
+        </div>
+    </div>
+
+<!------------------------------BLOCK6------------------------------>
+    <div class="block block6">
+        <h3 class="block-title"></h3>
+        <div class="block-content">
+           
+        </div>
+    </div>
+
+    <script src="../../JS/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script src="../../JS/script.js"></script>
+    <script src="JS\script.js"></script>
+</body>
+</html>

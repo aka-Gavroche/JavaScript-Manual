@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS\style_zero.css">
+    <!-- <link rel="stylesheet" href="CSS\style.css"> -->
+    <link rel="stylesheet" href="../../CSS/style.css">
+    <!------------------------------------Fonts------------------------------------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>JS lesson #3</title>
+</head>
+<body>
+    <header>
+        <h1>
+            <a class = "main_page_link" href="../../index.html">JavaScript</a>
+            <hr>
+        </h1>
+        <a class="previous_link" href="../JS-Files-1-2/index.html"></a>
+        <h2 class="suptitle_text">Урок №3<span class="lesson_name">Про змінні</span></h2>
+        <a class="next_link" href="../JS-Files-4/index.html"></a>
+    </header>
+
+    <div class="suptitle">
+        <a class="previous_link" href="../JS-Files-1-2/index.html"></a>
+        <h2 class="suptitle_text suptitle_text--second">Урок №3</h2>
+        <a class="next_link" href="../JS-Files-4/index.html"></a>
+    </div>
+    
+    <div class="suptitle_list">
+        <div class="suptitle_list_block">
+            <div class="suptitle_list_block_header">
+                <div class="close_button">X</div>
+            </div>
+            <div class="suptitle_list_content">
+                <p id="suptitleItem1">Змінні</p>
+                <p id="suptitleItem2">Константи</p>
+                <p id="suptitleItem3">Ключове слово var</p>
+            </div>
+        </div>
+    </div>
+
+    <div id = "top_button" class="top_button">
+    </div>
+    <div class="block block1">
+        <h3 class="block-title">Змінні</h3>
+        <div class="block-content" >
+            <p>Змінна - це іменована комірка пам'яті.</p>
+            <p>Для оголошення змінної використовується ключове слово let, після якого пишеться ім'я змінної.</p>
+            <p>Ім'я змінної може складатись із літер латинського алфавіту, цифр, символів (долара та нижнього підкреслення).
+                Водночас ім'я змінної не може починатись із цифр. Ім'я змінної повинно відповідати вмісту. 
+                Якщо ім'я змнної складається з кількох слів, то їх пишуть одним словом 
+                через <a href="https://en.wikipedia.org/wiki/Camel_case" target="_blank">lowerCamelCase</a>. 
+                Для імен змінних не можна використовувати зарезервовані імена.
+            </p>
+            <p>
+                Щоб оголосити кілька змінних можна використовувати один із трьох способів:
+                <ul>
+                    <li>в рядок через кому;</li>
+                    <li>через кому з нового рядка;</li>
+                    <li>окремо.</li>
+                </ul>
+            </p>
+            <p>Значення змінної можна перезаписати, або ж передати значення із однієї змінної в іншу.</p>
+            <p>
+                Раніше можна було оголошувати змінну без ключового слова. Це можна робити і зараз, але у режимі 
+                "use strict" це буде помилкою.
+            </p>
+            <p>Оголошувати змінну можна в рзних частинах коду.</p>
+            <p>Поворно оголошувати змінну в межах однієї області видимості не можна.</p>
+            <p>
+                Областю видимості змінної, оголошеної ключовим словом let буде блок, у якому вона вона оголошена, 
+                а також усі його підблоки.
+            </p>
+        </div>
+    </div>
+    <div class="block block2">
+        <h3 class="block-title">Константи</h3>
+        <div class="block-content">
+            <p>Константа - іменована комірка пам'яті, значення якої не можна змінити.</p>
+            <p>Для оголошення використовується ключове слово const.</p>
+            <p>
+                Імена констант, що відомі наперед, прийнято записувати через верхній реєстр і, при потребі, 
+                розділяти нижнім підкресленням. Імена констант зі значеннями, що присвоюються 
+                в процесs виконання програм записуються так само, як і імена змінних.
+            </p>
+        </div>
+    </div>
+
+    <div class="block block3">
+        <h3 class="block-title">Ключове слово var</h3>
+        <div class="block-content">
+            <p>Для оголошення змінної також можна використовувати ключове слово var.</p>
+            <p>
+                Суть у тому, що ключові слова 
+                let і const з'явилися у <a target="_blank" href="https://www.w3schools.com/js/js_es6.asp">ECMAScript2015</a> 
+                і до цього використовувалося лише var.
+            </p>
+            <p>
+                Багато хто вважає слово var застарілим, але є декілька цікавих нюансів, пов'язаних із ним:
+                <ul>
+                    <li>використовуючи var, можна використовувати змінну до її оголошення, 
+                        незалежно від того,чи використовується режим "use strict";
+                    </li>
+                    <li>
+                        у випадку області видимості блока if, чи циклу, або ж подібних блоків, змінна, 
+                        оголошена через var буде доступною і поза межами блока if, циклу, чи подібного;
+                        можна ще сказати, що якщо у функції оголошено змінну через var, то областю видимості буде вся функція,
+                        а не лише її підблоки.
+                    </li>
+                </ul>
+            </p>
+            
+        </div>
+    </div>
+    <script src="../../JS/script.js"></script>
+    <script src="JS\script.js"></script>
+</body>
+</html>

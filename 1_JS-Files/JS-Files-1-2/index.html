@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS\style_zero.css">
+    <!-- <link rel="stylesheet" href="CSS\style.css"> -->
+    <link rel="stylesheet" href="../../CSS/style.css">
+    <!------------------------------------Fonts------------------------------------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>JS lesson #1-2</title>
+</head>
+<body>
+    <header>
+        <h1>
+            <a class = "main_page_link" href="../../index.html">JavaScript</a>
+            <hr>
+        </h1>
+        <a class="previous_link" href="index.html"></a>
+        <h2 class="suptitle_text">Урок №1-2<span class="lesson_name">Вступ</span></h2>
+        <a class="next_link" href="../JS-Files-3/index.html"></a>
+    </header>
+    
+    <div class="suptitle">
+        <a class="previous_link" href="index.html"></a>
+        <h2 class="suptitle_text suptitle_text--second">Урок №1-2</h2>
+        <a class="next_link" href="../JS-Files-3/index.html"></a>
+    </div>
+
+    <div class="suptitle_list">
+        <div class="suptitle_list_block">
+            <div class="suptitle_list_block_header">
+                <div class="close_button">X</div>
+            </div>
+            <div class="suptitle_list_content">
+                <p id="suptitleItem1">Що таке JavaScript?</p>
+                <p id="suptitleItem2">Основи синтаксису</p>
+                <p id="suptitleItem3">Строгий режим - "use strict"</p>
+            </div>
+        </div>
+    </div>
+
+    <div id = "top_button" class="top_button">
+    </div>
+
+    <div class="block block1">
+        <h3 class="block-title">Що таке JavaScript?</h3>
+            <div class="block-content">
+                <p>
+                    JavaScript - це високорівнева, динамічна, мультипарадигмова мова програмування. Реалізація стандарту ECMAScript.
+                    Програми написані цією мовою називаються скриптами. Скрипти виконуються як простий текст.
+                    Сьогодні JS може виконуватись не лише у браузері, але і на сервері та й на будь-якому іншому пристрої, яке має програму, 
+                    що називається "рушієм" JavaScript.
+                    У браузера є свій особистий рушій. 
+                    </p>
+            
+                   <p>
+                    Різні браузери мають різні рушії:
+                    <ul>
+                        <li>V8 - Chrome, Opera, Edge.</li>
+                        <li>SpiderMonkey - Firefox.</li>
+                        <li>SquirrelFish, Nitro, JavaScriptCore - Safari.</li>
+                        <li>Chakra - IE.</li>
+                    </ul>
+                   </p>
+            
+                   <p>
+                    Як працюють рушії?
+                    Рушій, вбудований у браузер читає ("парсить") текст скрипта. Після чого він компілює текст в машинну мову. 
+                    Після цього машинний код запускається і працює досить швидко.
+                   </p>
+            </div>
+    </div>
+
+    <div class="block block2">
+        <h3 class="block-title">
+            Основи синтаксису
+        </h3>
+        <div class="block-content">
+            <p>Будь-яка програма на JS складається із інструкцій.</p>
+            <p>Інструкція - це завершений запис, команда на виконання. Інструкції прийнято розділяти крапкою з комою.</p>
+            <p>Інструкції можуть складатись із:
+            <ul>
+                <li>значень, котрі в свою чергу поділяються на:
+                    <ul class="underlist">
+                        <li>фіксовані значення (літерали);</li>
+                        <li>значення констант;</li>
+                        <li>значення змінних.</li>
+                    </ul>
+                </li>
+                <li>операторів;</li>
+                <li>виразів;
+                    <p>
+                    вираз - це комбінація значень, констант, змінних, операторів, яку інтерпретує мова програмування;
+                    </p>   
+                    <p>якщо у виразі присвоюється якесь значення для змінної чи константи, - це вираз присвоєння;</p>     
+                    <p>у випадку, коли вираз повертає якесь значення без присвоєння - вираз без присвоєння;</p>            
+                </li>
+                <li>ключових слів - призначені для визначення того, яку дію потрібно виконати;</li>
+                <li>коментарів.</li>
+            </ul>
+            </p>
+
+            <p>
+                Інструкції в JS можна групувати в блоки інструкцій за допомогою фігурних дужок - використовується у функціях циклах і т.д.
+            </p>
+
+            <p>
+                В інструкції рекомендується додавати пропуски, щоб зробити код більш зручним для читання.
+            </p>
+
+            <p>
+                Також рекомендується уникати рядків довших ніж 80 символів. Якщо інструкція має велику довжину, 
+                то її ліпше розірвати - зазвичай після оператора.
+            </p>
+        </div>
+    </div>
+
+    <div class="block block3">
+        <h3 class="block-title">
+            Строгий режим - "use strict"
+        </h3>
+       <div class="block-content">
+            <p>  
+                У 2009 році появився ECMAScript (ES5). Цей стандарт додав нові можливості та змінив деякі з існуючих.
+            </p>
+            <p>
+                Щоб старий код працював нормально, нові можливості, за замовчуванням, не застосовуються. Щоб їх активувати,
+                необхідно прописати директиву "use strict" у першому рядку скрипта. Над директивою можуть бути лише коментарі.
+                Відмінити вхід в строгий режим неможливо.
+            </p>
+            <p>
+                У консолі браузера "use strict" за замовчуванням виключений. Щоб його включити треба прописати "use strict" та нажати Enter.
+            </p>
+       </div>
+    </div>
+    <script src="../../JS/script.js"></script>
+    <script src="JS\script.js"></script>
+</body>
+</html>
